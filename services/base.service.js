@@ -1,3 +1,5 @@
+const ApiError = require("../utils/ApiError");
+
 class BaseService {
 
     constructor(repository){
@@ -13,7 +15,7 @@ class BaseService {
 
         let items= this.repository.getById
         if(!items){
-            return "Not Found";
+           throw ApiError.notFound(`${this.repository.model.modelName} not found`)
         }
         return await items;
     }
@@ -27,7 +29,7 @@ class BaseService {
 
         let item= this.repository.update(id,data);
         if(!item){
-            return "Not Found";
+            throw ApiError.notFound(`${this.repository.model.modelName} not found`)
         }
         return item;
     }
@@ -36,7 +38,7 @@ class BaseService {
 
         let item= this.repository.delete(id);
         if(!item){
-            return "Not found";
+           throw ApiError.notFound(`${this.repository.model.modelName} not found`)
         }
         return item;
     }

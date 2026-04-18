@@ -9,7 +9,7 @@ class ApiError extends Error{
         Error.captureStackTrace(this, this.constructor)
     }
 
-    static bedRequest(message= "Bed Request", errors= null){
+    static badRequest(message= "Bed Request", errors= null){
 
         return new ApiError(400,message,errors)
     }

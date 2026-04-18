@@ -1,4 +1,7 @@
-const express= require('express')
+const router= require('express').Router();
 
-const app= express();
-app.use('')
+
+router.use('/admin',require('./admin/index.route'));
+
+module.exports= router;
+

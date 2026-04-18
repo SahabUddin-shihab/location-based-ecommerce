@@ -24,7 +24,7 @@ class BaseRepository{
         return await query;
     }
 
-    async update(filter= {}, options= {}){
+    async find(filter= {}, options= {}){
         const {
                 populate,
                 sort = { createdAt: -1 },
