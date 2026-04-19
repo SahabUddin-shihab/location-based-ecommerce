@@ -44,3 +44,8 @@
 2026-04-19 09:11:43:1143 [31merror[39m: [31m404 - CityModel not found - /api/v1/admin/city/69e437874e5b9564d47fef03 - DELETE - ::1[39m
 2026-04-19 09:12:03:123 [31merror[39m: [31m404 - CityModel not found - /api/v1/admin/city/69e437874e5b9564d47fef03 - DELETE - ::1[39m
 2026-04-19 09:37:52:3752 [31merror[39m: [31m404 - CityModel not found - /api/v1/admin/city/69e437874e5b9564d47fef03 - DELETE - ::1[39m
+2026-04-19 10:48:15:4815 [31merror[39m: [31m400 - Validation failed - /api/v1/admin/city/69e437874e5b9564d47fef0 - DELETE - ::1[39m
+2026-04-19 10:48:21:4821 [31merror[39m: [31m404 - CityModel not found - /api/v1/admin/city/69e437874e5b9564d47fef03 - DELETE - ::1[39m
+2026-04-19 11:36:30:3630 [31merror[39m: [31m500 - E11000 duplicate key error collection: location_based_ecommerce.cities index: name_1 dup key: { name: "Gazipur" } - /api/v1/admin/city - POST - ::1[39m
+2026-04-19 12:04:33:433 [31merror[39m: [31m400 - Validation failed - /api/v1/admin/city - POST - ::1[39m
+2026-04-19 12:18:48:1848 [31merror[39m: [31m400 - Validation failed - /api/v1/admin/city - POST - ::1[39m

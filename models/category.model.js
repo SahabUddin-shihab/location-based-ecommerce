@@ -19,6 +19,11 @@ const categorySchema= new mongoose.Schema(
         image: {
             type: String,
             default: 'default-category.jpg'
+        },
+        city: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'CityModel',
+            required: true
         }
     },{
         timeseries: true,
@@ -31,3 +36,5 @@ categorySchema.pre('save', function(next){
     this.slug= slugify(this.name, { lower: true });
     next();
 });
+
+module.exports= new mongoose.model('Category',categorySchema);

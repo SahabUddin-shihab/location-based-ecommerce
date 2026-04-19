@@ -19,4 +19,11 @@ citySchema.pre('save', function() {
     this.slug = slugify(this.name, { lower: true });
 });
 
-module.exports = mongoose.model('CityModel', citySchema);
+citySchema.virtual('categories',{
+    ref: 'Category',
+    localField: '_id',
+    foreignField: 'city',
+    justOne: false
+});
+
+module.exports = mongoose.model('City', citySchema);

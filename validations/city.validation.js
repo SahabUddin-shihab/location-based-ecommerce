@@ -8,6 +8,7 @@ const createCitySchema = z.object({
             .min(3, 'Name must be at least 3 characters')
             .max(40, 'Name is too long')
             .trim(),
+            
         status: z.boolean().default(true)
     })
 });
