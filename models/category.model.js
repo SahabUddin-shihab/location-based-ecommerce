@@ -36,4 +36,11 @@ categorySchema.pre('save', function(){
     this.slug= slugify(this.name, { lower: true });
 });
 
+categorySchema.virtual('subcategories',{
+    ref: 'Subcategory',
+    localField: '_id',
+    foreignField: 'category',
+    justOne: false
+});
+
 module.exports= new mongoose.model('Category',categorySchema);
