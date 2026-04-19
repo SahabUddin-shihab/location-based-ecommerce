@@ -6,7 +6,7 @@ class BaseService {
         this.repository= repository
     }
 
-    async create(){
+    async create(data){
         
         return await this.repository.create(data);
     }
@@ -27,7 +27,7 @@ class BaseService {
 
     async update(id, data){
 
-        let item= this.repository.update(id,data);
+        let item= this.repository.updateById(id,data);
         if(!item){
             throw ApiError.notFound(`${this.repository.model.modelName} not found`)
         }
@@ -36,17 +36,16 @@ class BaseService {
 
     async delete(id){
 
-        let item= this.repository.delete(id);
+        let item= await this.repository.delete(id);
         if(!item){
            throw ApiError.notFound(`${this.repository.model.modelName} not found`)
         }
         return item;
     }
-
+    
     async count(filter= {}){
 
         return await this.repository.count(filter);
     }
 }
-
 module.exports= BaseService

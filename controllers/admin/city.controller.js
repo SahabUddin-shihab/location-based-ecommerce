@@ -19,16 +19,28 @@ class CityController {
             sort: { createdAt: -1 },
         }
        
-        const result= this.CityService.getAll({},options);
+        const result= await this.CityService.getAll({},options);
+    
         const total= result.length || 0;
         ApiResponse.paginated(res,result,page,limit,total,"Cities are fetching successfullly");
     });
 
     store= catchAsync(async(req,res)=>{
-        return res.json(req.body);
-        // const city= this.CityService.create(req.body);
-        // res.status(201).json(ApiResponse.success(res,city,"City created successfully"));
+
+        const createResult= await this.CityService.create(req.body);
+        return ApiResponse.success(res, createResult, "City created successfully");
+    });
+
+    update= catchAsync(async(req,res)=>{
+        const { id }= req.params;
+        const updateResult= await this.CityService.update(id,req.body);
+        return ApiResponse.success(res,updateResult,"City update successfully")
     });
     
+    delete= catchAsync(async(req,res)=>{
+        const { id }= req.params;
+        const deleteResult= await this.CityService.delete(id);
+        return ApiResponse.success(res,deleteResult,"City delete successfully")
+    });
 }
 module.exports= new CityController();

@@ -1,3 +1,5 @@
+const slugify= require('slugify')
+
 class BaseRepository{
     constructor(model){
         this.model= model
@@ -34,7 +36,6 @@ class BaseRepository{
               } = options;
         
         let query= this.model.find(filter);
-
         if(populate){
             query= query.populate(populate);
         }
@@ -50,6 +51,9 @@ class BaseRepository{
 
     async updateById(id, data, options= { new: true }){
 
+        if(data.name){
+            data.slug= slugify(data.name,{lower: true})
+        }
         return await this.model.findByIdAndUpdate(id, data, options)
 
     }
@@ -60,7 +64,7 @@ class BaseRepository{
 
     }
 
-    async deleteById(id){
+    async delete(id){
 
         return await this.model.findByIdAndDelete(id);
 

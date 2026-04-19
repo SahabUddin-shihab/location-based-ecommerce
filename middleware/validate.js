@@ -2,10 +2,12 @@ const ApiError = require('../utils/ApiError');
 
 const validate = (schema) => (req, res, next) => {
   try {
+
+    
     const result = schema.safeParse({
-      body: req.body,
-      query: req.query,
-      params: req.params,
+      body: req.body || {},
+      query: req.query || {},
+      params: req.params || {},
     });
 
     if (!result.success) {

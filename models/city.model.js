@@ -1,22 +1,22 @@
-const mongoose= require('mongoose');
-const slugify= require('slugify');
-const { email } = require('zod');
+const mongoose = require('mongoose');
+const slugify = require('slugify');
 
-
-
-const citySchema= new mongoose.Schema({
+const citySchema = new mongoose.Schema({
     name: {
-        required: [true, 'Name is required'],
         type: String,
+        required: [true, 'Name is required'],
         unique: true,
         trim: true
     },
-    slug: String
+    slug: String,
+    status: {
+        type: Boolean,
+        default: true
+    }
 });
 
-citySchema.pre('save', function(next){
-    this.slug= slugify(this.name,{ lower: true });
-    next();
+citySchema.pre('save', function() {
+    this.slug = slugify(this.name, { lower: true });
 });
 
-module.exports= mongoose.model("CityModel",citySchema);
+module.exports = mongoose.model('CityModel', citySchema);

@@ -1,6 +1,6 @@
-2026-04-19 01:17:46:1746 [31merror[39m: [31m400 - Validation failed - /api/v1/admin/city/create - POST - ::1[39m
-2026-04-19 01:21:09:219 [31merror[39m: [31m400 - Validation failed - /api/v1/admin/city/create - POST - ::1[39m
-2026-04-19 01:21:46:2146 [31merror[39m: [31m400 - Validation failed - /api/v1/admin/city/create - POST - ::1[39m
-2026-04-19 01:25:11:2511 [31merror[39m: [31m400 - Validation failed - /api/v1/admin/city/create - POST - ::1[39m
-2026-04-19 01:26:57:2657 [31merror[39m: [31m400 - Validation failed - /api/v1/admin/city/create - POST - ::1[39m
-2026-04-19 01:27:15:2715 [31merror[39m: [31m400 - Validation failed - /api/v1/admin/city/create - POST - ::1[39m
+2026-04-19 08:49:09:499 [31merror[39m: [31m500 - Cannot access 'id' before initialization - /api/v1/admin/city/69e437874e5b9564d47fef03 - DELETE - ::1[39m
+2026-04-19 08:50:34:5034 [31merror[39m: [31m500 - this.repository.delete is not a function - /api/v1/admin/city/69e437874e5b9564d47fef03 - DELETE - ::1[39m
+2026-04-19 09:04:39:439 [31merror[39m: [31m500 - resizeBy is not defined - /api/v1/admin/city/69e437874e5b9564d47fef03 - DELETE - ::1[39m
+2026-04-19 09:11:43:1143 [31merror[39m: [31m404 - CityModel not found - /api/v1/admin/city/69e437874e5b9564d47fef03 - DELETE - ::1[39m
+2026-04-19 09:12:03:123 [31merror[39m: [31m404 - CityModel not found - /api/v1/admin/city/69e437874e5b9564d47fef03 - DELETE - ::1[39m
+2026-04-19 09:37:52:3752 [31merror[39m: [31m404 - CityModel not found - /api/v1/admin/city/69e437874e5b9564d47fef03 - DELETE - ::1[39m

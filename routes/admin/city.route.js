@@ -14,9 +14,28 @@ router.get(
     CityController.index
 );
 router.post(
-    '/create',
+    '/',
     validate(createCitySchema),
     CityController.store
 );
+
+
+router.put(
+    '/:id',
+    validate(updateCitySchema),
+    CityController.update
+)
+
+// router.patch(
+//     '/status-update/:id',
+//     validate(getCitySchema),
+//     cityController.statusUpdate
+// )
+
+router.delete(
+    '/:id',
+    validate(deleteCitySchema),
+    CityController.delete
+)
 
 module.exports= router

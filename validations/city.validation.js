@@ -1,41 +1,49 @@
-const z= require('zod')
+const z = require('zod');
 
+const objectIdSchema = z.string().regex(/^[0-9a-fA-F]{24}$/, 'Invalid MongoDB ObjectId');
 
-const createCitySchema= z.object({
+const createCitySchema = z.object({
     body: z.object({
-        name: z.string({
-            required_error: 'Name is required',
-            invalid_type_error: 'Name must be a string'
-        }).min(3, 'Name must be at least 3 characters').max(40,'Name is too long'),
-        statu: z.boolean().default(true)
+        name: z.string()
+            .min(3, 'Name must be at least 3 characters')
+            .max(40, 'Name is too long')
+            .trim(),
+        status: z.boolean().default(true)
     })
-})
+});
 
-const updateCitySchema= z.object({
+const updateCitySchema = z.object({
     params: z.object({
-        id: z.string().regex(/^[0-9a-fA-f]{24}$/, 'Invalid Category ID')
+        id: objectIdSchema
     }),
     body: z.object({
-        name: z.string().min(3, 'Name must be greater then 3 character'),
-        statu: z.boolean().default(1)
-    })
-})
-
-const getCitySchema= z.object({
-    params: z.object({
-        id: z.string().regex(/^[0-9a-fA-f]{24}$/,'Invalide city ID')
-    })
-});
-
-const deleteCitySchema= z.object({
-    params: z.object({
-        id: z.string().regex(/^[0-9a-fA-f]{24}$/,'Invalide city ID')
+        name: z.string()
+            .min(3, 'Name must be at least 3 characters')
+            .max(40, 'Name is too long')
+            .trim()
+            .optional(),
+        status: z.boolean().optional()
+    }).refine(data => Object.keys(data).length > 0, {
+        message: 'At least one field is required for update'
     })
 });
 
-module.exports= {
+const getCitySchema = z.object({
+    params: z.object({
+        id: objectIdSchema
+    })
+});
+
+const deleteCitySchema = z.object({
+    params: z.object({
+        id: objectIdSchema
+    })
+});
+
+
+module.exports = {
     createCitySchema,
     updateCitySchema,
     getCitySchema,
     deleteCitySchema
-}
+};
