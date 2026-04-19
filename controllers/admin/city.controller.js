@@ -10,7 +10,6 @@ class CityController {
 
     index= catchAsync(async(req,res,next)=>{
         
-        const { id }= req.params;
         const {page=1, limit=10 }= req.query;
 
         const options= {
@@ -21,7 +20,7 @@ class CityController {
        
         const result= await this.CityService.getAll({},options);
     
-        const total= result.length || 0;
+        const total= result.length;
         ApiResponse.paginated(res,result,page,limit,total,"Cities are fetching successfullly");
     });
 

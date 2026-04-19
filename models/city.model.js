@@ -13,6 +13,10 @@ const citySchema = new mongoose.Schema({
         type: Boolean,
         default: true
     }
+},{
+    timestamps: true,
+    toJSON: {virtuals: true},
+    toObject: {virtuals: true}
 });
 
 citySchema.pre('save', function() {

@@ -26,15 +26,14 @@ const categorySchema= new mongoose.Schema(
             required: true
         }
     },{
-        timeseries: true,
+        timestamps: true,
         toJSON: {virtuals: true},
         toObject: {virtuals: true}
     }
 )
 
-categorySchema.pre('save', function(next){
+categorySchema.pre('save', function(){
     this.slug= slugify(this.name, { lower: true });
-    next();
 });
 
 module.exports= new mongoose.model('Category',categorySchema);

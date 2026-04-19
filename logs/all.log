@@ -49,3 +49,7 @@
 2026-04-19 11:36:30:3630 [31merror[39m: [31m500 - E11000 duplicate key error collection: location_based_ecommerce.cities index: name_1 dup key: { name: "Gazipur" } - /api/v1/admin/city - POST - ::1[39m
 2026-04-19 12:04:33:433 [31merror[39m: [31m400 - Validation failed - /api/v1/admin/city - POST - ::1[39m
 2026-04-19 12:18:48:1848 [31merror[39m: [31m400 - Validation failed - /api/v1/admin/city - POST - ::1[39m
+2026-04-19 18:57:24:5724 [31merror[39m: [31m500 - this.CategoryService.getAll is not a function - /api/v1/admin/category - GET - ::1[39m
+2026-04-19 19:05:07:57 [31merror[39m: [31m400 - Validation failed - /api/v1/admin/category - POST - ::1[39m
+2026-04-19 19:06:53:653 [31merror[39m: [31m500 - next is not a function - /api/v1/admin/category - POST - ::1[39m
+2026-04-19 19:08:19:819 [31merror[39m: [31m500 - E11000 duplicate key error collection: location_based_ecommerce.categories index: name_1 dup key: { name: "cumilla" } - /api/v1/admin/category - POST - ::1[39m
