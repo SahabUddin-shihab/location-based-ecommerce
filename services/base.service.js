@@ -1,4 +1,4 @@
-const ApiError = require("../utils/ApiError");
+const ApiError= require('../utils/ApiError');
 
 class BaseService {
 
@@ -13,7 +13,7 @@ class BaseService {
 
     async getById(id, populate= null){
 
-        let items= this.repository.getById
+        let items= this.repository.findById(id,populate)
         if(!items){
            throw ApiError.notFound(`${this.repository.model.modelName} not found`)
         }

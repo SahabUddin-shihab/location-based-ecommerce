@@ -35,6 +35,19 @@ class CategoryController{
         return ApiResponse.success(res,editResult,'Fecth category by ID successfully');
     });
 
+    update= catchAsync(async(req,res)=>{
+        const { id }= req.params;
+        
+        const updateResult= await this.CategoryService.update(id,req.body);
+        return ApiResponse.success(res,updateResult,"Category update successfully");
+    });
+
+    delete= catchAsync(async(req,res)=>{
+        const { id }= req.params;
+
+        const deleteResult= await this.CategoryService.delete(id);
+        return ApiResponse.success(res,deleteResult,'Category delete successfully');
+    });
 
 }
 

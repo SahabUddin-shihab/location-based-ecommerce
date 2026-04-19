@@ -53,3 +53,11 @@
 2026-04-19 19:05:07:57 [31merror[39m: [31m400 - Validation failed - /api/v1/admin/category - POST - ::1[39m
 2026-04-19 19:06:53:653 [31merror[39m: [31m500 - next is not a function - /api/v1/admin/category - POST - ::1[39m
 2026-04-19 19:08:19:819 [31merror[39m: [31m500 - E11000 duplicate key error collection: location_based_ecommerce.categories index: name_1 dup key: { name: "cumilla" } - /api/v1/admin/category - POST - ::1[39m
+2026-04-19 19:27:07:277 [31merror[39m: [31m404 - Category not found - /api/v1/admin/category/69e4d3ba1db74f65c720517c - GET - ::1[39m
+2026-04-19 19:27:56:2756 [31merror[39m: [31m404 - Category not found - /api/v1/admin/category/69e4d3ba1db74f65c720517c - GET - ::1[39m
+2026-04-19 20:11:07:117 [31merror[39m: [31m404 - Category not found - /api/v1/admin/category/69e4d3ba1db74f65c720517c - GET - ::1[39m
+2026-04-19 20:13:52:1352 [31merror[39m: [31m404 - Category not found - /api/v1/admin/category/69e4d3ba1db74f65c720517c - GET - ::1[39m
+2026-04-19 20:14:31:1431 [31merror[39m: [31m404 - Category not found - /api/v1/admin/category/69e4d3ba1db74f65c720517c - GET - ::1[39m
+2026-04-19 20:15:23:1523 [31merror[39m: [31m400 - Validation failed - /api/v1/admin/category/69e4d3ba1db74f65c720517 - GET - ::1[39m
+2026-04-19 20:15:29:1529 [31merror[39m: [31m404 - Category not found - /api/v1/admin/category/69e4d3ba1db74f65c720517c - GET - ::1[39m
+2026-04-19 23:04:19:419 [31merror[39m: [31m400 - Validation failed - /api/v1/admin/category/69e4d3ba1db74f65c720517c - PUT - ::1[39m

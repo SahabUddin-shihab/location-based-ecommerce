@@ -26,4 +26,16 @@ router.get(
     CategoryController.edit
 )
 
+router.put(
+    '/:id',
+    validate(updateCategorySchema),
+    CategoryController.update
+);
+
+router.delete(
+    '/:id',
+    validate(deleteCategorySchema),
+    CategoryController.delete
+)
+
 module.exports= router;
