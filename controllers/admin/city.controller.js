@@ -16,6 +16,7 @@ class CityController {
             limit: parseInt(limit),
             skip: (parseInt(page)-1)* parseInt(limit),
             sort: { createdAt: -1 },
+
         }
        
         const result= await this.CityService.getAll({},options);

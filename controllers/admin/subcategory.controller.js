@@ -15,7 +15,11 @@ class SubcategoryController{
         const options= {
             limit: parseInt(limit),
             skip: (parseInt(page)-1) * parseInt(limit),
-            sort: { createdAt: -1 }
+            sort: { createdAt: -1 },
+            populate: {
+                path: 'category',
+                select: 'name'
+            }
         }
 
         const result= await this.SubcategoryService.getAll({},options);

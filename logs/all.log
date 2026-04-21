@@ -68,3 +68,8 @@
 2026-04-20 12:40:24:4024 [31merror[39m: [31m500 - res.status is not a function - /api/v1/admin/subcategory/69e5c6271b2f052ac37aad52 - PUT - ::1[39m
 2026-04-20 12:44:08:448 [31merror[39m: [31m500 - Cannot read properties of undefined (reading 'delete') - /api/v1/admin/subcategory/69e5ca96c01c2d669b38d664 - DELETE - ::1[39m
 2026-04-20 13:01:45:145 [31merror[39m: [31m500 - Class constructor ApiResponse cannot be invoked without 'new' - /api/v1/admin/subcategory/69e5ca96c01c2d669b38d664 - DELETE - ::1[39m
+2026-04-20 13:35:29:3529 [31merror[39m: [31m500 - Cannot populate path `category` because it is not in your schema. Set the `strictPopulate` option to false to override. - /api/v1/admin/city - GET - ::1[39m
+2026-04-20 13:45:39:4539 [31merror[39m: [31m500 - Schema hasn't been registered for model "CityModel".[39m
+[31mUse mongoose.model(name, schema) - /api/v1/admin/category - GET - ::1[39m
+2026-04-21 10:58:36:5836 [31merror[39m: [31m500 - Cannot read properties of undefined (reading 'safeParse') - /api/v1/admin/brand - POST - ::1[39m
+2026-04-21 12:10:46:1046 [31merror[39m: [31m500 - Cannot read properties of undefined (reading 'safeParse') - /api/v1/admin/brand - POST - ::1[39m

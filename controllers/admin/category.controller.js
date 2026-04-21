@@ -14,7 +14,11 @@ class CategoryController{
         const options= {
             limit: parseInt(limit),
             skip: (parseInt(page)-1) * parseInt(limit),
-            sort: { createdAt: -1 }
+            sort: { createdAt: -1 },
+            populate: {
+                path: 'city',
+                select: 'name'
+            }
         }
         const result= await this.CategoryService.getAll({},options);
         const total= result.length;
