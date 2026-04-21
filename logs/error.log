@@ -33,3 +33,6 @@
 [31mUse mongoose.model(name, schema) - /api/v1/admin/category - GET - ::1[39m
 2026-04-21 10:58:36:5836 [31merror[39m: [31m500 - Cannot read properties of undefined (reading 'safeParse') - /api/v1/admin/brand - POST - ::1[39m
 2026-04-21 12:10:46:1046 [31merror[39m: [31m500 - Cannot read properties of undefined (reading 'safeParse') - /api/v1/admin/brand - POST - ::1[39m
+2026-04-21 12:13:34:1334 [31merror[39m: [31m500 - E11000 duplicate key error collection: location_based_ecommerce.brands index: name_1 dup key: { name: "MccDoland" } - /api/v1/admin/brand - POST - ::1[39m
+2026-04-21 14:58:23:5823 [31merror[39m: [31m500 - Operation `brands.insertOne()` buffering timed out after 10000ms - /api/v1/admin/brand - POST - ::1[39m
+2026-04-21 15:02:17:217 [31merror[39m: [31m500 - Operation `brands.insertOne()` buffering timed out after 10000ms - /api/v1/admin/brand - POST - ::1[39m
