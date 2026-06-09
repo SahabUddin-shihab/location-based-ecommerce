@@ -22,14 +22,14 @@ app.use((req,res,next)=>{
   next();
 })
 
-app.use(cors());
-// app.use(
-//     cors({
-//         origin: process.env.CLIENT_URL || 'http://localhost:3000',
-//         credentials: true,
-//         optionsSuccessStatus: 200
-//     })
-// );
+
+app.use(
+    cors({
+        origin: process.env.CLIENT_URL || 'http://localhost:3000',
+        credentials: true,
+        optionsSuccessStatus: 200
+    })
+);
 
 // Logging
 if (process.env.NODE_ENV === 'development') {
@@ -42,6 +42,9 @@ if (process.env.NODE_ENV === 'development') {
   );
 }
 
+app.get('/',(req,res)=>{
+    res.status(200).json("Server on fire");
+});
 app.use('/api/v1',require('./routes/api'));
 
 app.use(errorHandler);
