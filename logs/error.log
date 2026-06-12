@@ -1,0 +1,2 @@
+2026-06-12 18:27:10:2710 [31merror[39m: [31m500 - E11000 duplicate key error collection: location_based_ecommerce.brands index: name_1 dup key: { name: "Samsung" } - /api/v1/admin/brand - POST - ::1[39m
+2026-06-12 19:35:18:3518 [31merror[39m: [31m500 - E11000 duplicate key error collection: location_based_ecommerce.brands index: name_1 dup key: { name: "Samsung" } - /api/v1/admin/brand - POST - ::1[39m

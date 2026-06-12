@@ -2,33 +2,90 @@ const mongoose = require('mongoose');
 const slugify = require('slugify');
 
 const variantSchema = new mongoose.Schema({
-    name: { type: String, required: true, trim: true }, 
+    name: { 
+        type: String,
+        required: true,
+        trim: true 
+    }, 
     options: [{
-        value: { type: String, required: true, trim: true },
-        sku: { type: String, trim: true },
-        price: { type: Number, min: 0 },
-        salePrice: { type: Number, min: 0 },
-        stock: { type: Number, default: 0, min: 0 },
+        value: { 
+            type: String, 
+            required: true, 
+            trim: true 
+        },
+        sku: { 
+            type: String, 
+            trim: true 
+        },
+        price: { 
+            type: Number,
+            min: 0 
+        },
+        salePrice: {
+             type: Number,
+            min: 0 
+        },
+        stock: { 
+            type: Number,
+            default: 0, 
+            min: 0 
+        },
         image: String,
     }]
 }, { _id: false });
 
+
+
 const reviewSchema = new mongoose.Schema({
-    user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-    rating: { type: Number, required: true, min: 1, max: 5 },
-    title: { type: String, trim: true, maxLength: 100 },
-    comment: { type: String, trim: true, maxLength: 1000 },
-    isVerifiedPurchase: { type: Boolean, default: false },
-    helpfulVotes: { type: Number, default: 0 },
-    isApproved: { type: Boolean, default: false },
+    user: { 
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'User', required: true 
+    },
+    rating: { 
+        type: Number, 
+        required: true, 
+        min: 1, 
+        max: 5 
+    },
+    title: { 
+        type: String, 
+        trim: true, 
+        maxLength: 100 
+    },
+    comment: { 
+        type: String, 
+        trim: true, 
+        maxLength: 1000 
+    },
+    isVerifiedPurchase: { 
+        type: Boolean, 
+        default: false 
+    },
+    helpfulVotes: { 
+        type: Number, 
+        default: 0 
+    },
+    isApproved: { 
+        type: Boolean, 
+        default: false 
+    },
 }, { timestamps: true });
 
+
 const seoSchema = new mongoose.Schema({
-    metaTitle: { type: String, maxLength: 70 },
-    metaDescription: { type: String, maxLength: 160 },
+    metaTitle: { 
+        type: String, 
+        maxLength: 70 
+    },
+    metaDescription: { 
+        type: String, 
+        maxLength: 160 
+    },
     metaKeywords: [String],
     ogImage: String,
 }, { _id: false });
+
+
 
 const productSchema = new mongoose.Schema({
     name: {
@@ -37,66 +94,179 @@ const productSchema = new mongoose.Schema({
         trim: true,
         maxLength: [200, 'Product name too long']
     },
-    slug: { type: String, unique: true },
-    sku: { type: String, unique: true, sparse: true, trim: true },
-    description: { type: String, required: [true, 'Description required'], trim: true },
-    shortDescription: { type: String, trim: true, maxLength: 500 },
+    slug: { 
+        type: String, 
+        unique: true 
+    },
+    sku: { 
+        type: String, 
+        unique: true, 
+        sparse: true, 
+        trim: true 
+    },
+    description: { 
+        type: String, 
+        required: [true, 'Description required'], 
+        trim: true 
+    },
+    shortDescription: { 
+        type: String, 
+        trim: true, 
+        maxLength: 500 
+    },
 
 
-    category: { type: mongoose.Schema.Types.ObjectId, ref: 'Category', required: true },
-    subcategory: { type: mongoose.Schema.Types.ObjectId, ref: 'Subcategory' },
-    brand: { type: mongoose.Schema.Types.ObjectId, ref: 'Brand' },
-    tags: [{ type: String, trim: true, lowercase: true }],
+    category: { 
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'Category', 
+        required: true 
+    },
+    subcategory: { 
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'Subcategory' 
+    },
+    brand: { 
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'Brand' 
+    },
+    tags: [{ 
+        type: String, 
+        trim: true, 
+        lowercase: true 
+    }],
 
-    price: { type: Number, required: true, min: 0 },
-    salePrice: { type: Number, min: 0, default: null },
+    price: { 
+        type: Number, 
+        required: true, 
+        min: 0 
+    },
+    salePrice: { 
+        type: Number, 
+        min: 0, 
+        default: null 
+    },
     saleStartDate: Date,
     saleEndDate: Date,
-    costPrice: { type: Number, min: 0 },
-
-    taxClass: { type: String, enum: ['standard', 'reduced', 'zero', 'none'], default: 'standard' },
-    taxRate: { type: Number, default: 0, min: 0, max: 100 },
-    weight: { type: Number, min: 0 },    // grams
-    dimensions: {
-        length: Number, width: Number, height: Number  // cm
+    costPrice: { 
+        type: Number, 
+        min: 0 
     },
-    isFreeShipping: { type: Boolean, default: false },
 
-    stock: { type: Number, default: 0, min: 0 },
-    lowStockThreshold: { type: Number, default: 5 },
-    manageStock: { type: Boolean, default: true },
+    taxClass: { 
+        type: String, 
+        enum: ['standard', 'reduced', 'zero', 'none'], 
+        default: 'standard' 
+    },
+    taxRate: { 
+        type: Number, 
+        default: 0, 
+        min: 0, 
+        max: 100 },
+    weight: { 
+        type: Number, 
+        min: 0 
+    },
+    dimensions: {
+        length: Number, width: Number, height: Number  
+    },
+    isFreeShipping: { 
+        type: Boolean, 
+        default: false 
+    },
+
+    stock: { 
+        type: Number, 
+        default: 0, 
+        min: 0 
+    },
+    lowStockThreshold: { 
+        type: Number, 
+        default: 5 
+    },
+    manageStock: { 
+        type: Boolean, 
+        default: true 
+    },
     stockStatus: {
         type: String,
         enum: ['in_stock', 'out_of_stock', 'backorder'],
         default: 'in_stock'
     },
 
-    thumbnail: { type: String, default: null },
-    images: [{ url: String, alt: String, order: { type: Number, default: 0 } }],
+    thumbnail: { 
+        type: String, 
+        default: null 
+    },
+    images: [{ 
+        url: String, 
+        alt: String, 
+        order: { 
+            type: Number, 
+            default: 0 
+        } 
+    }],
 
-    hasVariants: { type: Boolean, default: false },
+    hasVariants: { 
+        type: Boolean, 
+        default: false 
+    },
     variants: [variantSchema],
     attributes: [{ key: String, value: String }],
 
     reviews: [reviewSchema],
-    averageRating: { type: Number, default: 0, min: 0, max: 5 },
-    reviewCount: { type: Number, default: 0 },
+    averageRating: { 
+        type: Number, 
+        default: 0, 
+        min: 0, 
+        max: 5 
+    },
+    reviewCount: { 
+        type: Number, 
+        default: 0 
+    },
 
-    isFeatured: { type: Boolean, default: false },
-    isNewArrival: { type: Boolean, default: false },
-    isBestSeller: { type: Boolean, default: false },
-    isActive: { type: Boolean, default: true },
-    isDigital: { type: Boolean, default: false },
+    isFeatured: { 
+        type: Boolean, 
+        default: false 
+    },
+    isNewArrival: { 
+        type: Boolean, 
+        default: false 
+    },
+    isBestSeller: { 
+        type: Boolean, 
+        default: false 
+    },
+    isActive: { 
+        type: Boolean, 
+        default: true 
+    },
+    isDigital: { 
+        type: Boolean, 
+        default: false 
+    },
 
 
-    relatedProducts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Product' }],
+    relatedProducts: [{ 
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'Product' 
+    }],
 
     seo: seoSchema,
 
-    viewCount: { type: Number, default: 0 },
-    soldCount: { type: Number, default: 0 },
+    viewCount: { 
+        type: Number, 
+        default: 0 
+    },
+    soldCount: { 
+        type: Number, 
+        default: 0 
+    },
 
-    createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'Admin' },
+    createdBy: { 
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'Admin' 
+    },
 }, {
     timestamps: true,
     toJSON: { virtuals: true },
