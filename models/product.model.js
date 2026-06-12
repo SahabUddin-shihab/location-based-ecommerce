@@ -284,7 +284,7 @@ productSchema.index({ soldCount: -1 });
 productSchema.index({ createdAt: -1 });
 productSchema.index({ slug: 1 });
 
-productSchema.pre('save', function (next) {
+productSchema.pre('save', function () {
     if (this.isModified('name') || this.isNew) {
         this.slug = slugify(this.name, { lower: true, strict: true }) + '-' + Date.now();
     }
@@ -299,7 +299,6 @@ productSchema.pre('save', function (next) {
             ? approved.reduce((s, r) => s + r.rating, 0) / approved.length
             : 0;
     }
-    next();
 });
 
 productSchema.virtual('effectivePrice').get(function () {

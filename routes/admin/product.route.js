@@ -13,7 +13,7 @@ const {
     approveReviewSchema,
 } = require('../../validations/product.validation');
 
-// Multer for product images (thumbnail + gallery)
+
 const storage = multer.diskStorage({
     destination: (req, file, cb) => cb(null, 'uploads/products'),
     filename:    (req, file, cb) => cb(null, `${Date.now()}-${Math.round(Math.random() * 1e9)}${path.extname(file.originalname)}`),
@@ -25,7 +25,7 @@ const productUpload = upload.fields([
 ]);
 
 
-// router.use(adminProtect);
+router.use(adminProtect);
 
 router.get('/',                                               AdminProductController.index);
 router.post('/',      productUpload, validate(createProductSchema), AdminProductController.store);

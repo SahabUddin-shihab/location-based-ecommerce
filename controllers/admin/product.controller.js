@@ -1,6 +1,7 @@
 const ProductService = require('../../services/product.service');
 const catchAsync = require('../../utils/catchAsync');
 const ApiResponse = require('../../utils/ApiResponse');
+const ProductRepository = require('../../repositories/product.repository');
 
 class AdminProductController {
     constructor() {
@@ -8,13 +9,14 @@ class AdminProductController {
     }
 
     index = catchAsync(async (req, res) => {
+
         const { page = 1, limit = 20, keyword, category, brand, isActive, isFeatured } = req.query;
         const filters = { keyword, category, brand };
         if (isActive !== undefined) filters.isActive = isActive === 'true';
         if (isFeatured !== undefined) filters.isFeatured = isFeatured === 'true';
 
 
-        const ProductRepository = require('../../repositories/product.repository');
+        
         const repo = new ProductRepository();
         const query = {};
         if (keyword) query.$text = { $search: keyword };
