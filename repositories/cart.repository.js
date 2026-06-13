@@ -8,7 +8,7 @@ class CartRepository extends BaseRepository {
 
     async findByUser(userId) {
         return this.model.findOne({ user: userId })
-            .populate('items.product', 'name slug price salePrice thumbnail stock stockStatus manageStock');
+            .populate('items.product', 'name slug price salePrice thumbnail stock stockStatus manageStock isActive');
     }
 
     async findBySession(sessionId) {

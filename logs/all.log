@@ -5,3 +5,30 @@
 2026-06-13 10:30:17:3017 [32minfo[39m: [32mEmail sent to jowora8859@preparmy.com: Verify your email address[39m
 2026-06-13 10:37:43:3743 [31merror[39m: [31m500 - jwt malformed - /api/v1/auth/me - GET - ::1[39m
 2026-06-13 10:37:49:3749 [31merror[39m: [31m500 - jwt malformed - /api/v1/user/cart - GET - ::1[39m
+2026-06-13 11:43:13:4313 [31merror[39m: [31m400 - Whey Protein Gold Standard 2lb is no longer available - /api/v1/user/orders - POST - ::1[39m
+2026-06-13 11:46:11:4611 [31merror[39m: [31m400 - Whey Protein Gold Standard 2lb is no longer available - /api/v1/user/orders - POST - ::1[39m
+2026-06-13 11:49:59:4959 [31merror[39m: [31m400 - Whey Protein Gold Standard 2lb is no longer available - /api/v1/user/orders - POST - ::1[39m
+2026-06-13 11:52:25:5225 [31merror[39m: [31m400 - Whey Protein Gold Standard 2lb is no longer available - /api/v1/user/orders - POST - ::1[39m
+2026-06-13 12:01:57:157 [31merror[39m: [31m400 - Walton Refrigerator 350L is no longer available - /api/v1/user/orders - POST - ::1[39m
+2026-06-13 12:02:58:258 [31merror[39m: [31m400 - Walton Refrigerator 350L is no longer available - /api/v1/user/orders - POST - ::1[39m
+2026-06-13 12:09:27:927 [31merror[39m: [31m400 - Walton Refrigerator 350L is no longer available - /api/v1/user/orders - POST - ::1[39m
+2026-06-13 12:09:54:954 [31merror[39m: [31m400 - Walton Refrigerator 350L is no longer available - /api/v1/user/orders - POST - ::1[39m
+2026-06-13 12:10:36:1036 [31merror[39m: [31m400 - Walton Refrigerator 350L is no longer available - /api/v1/user/orders - POST - ::1[39m
+2026-06-13 12:10:57:1057 [31merror[39m: [31m500 - Order validation failed: items.0.variant: Cast to Object failed for value "null" (type null) at path "variant" - /api/v1/user/orders - POST - ::1[39m
+2026-06-13 12:16:12:1612 [31merror[39m: [31m500 - Order validation failed: items.0.variant: Cast to Object failed for value "null" (type null) at path "variant" - /api/v1/user/orders - POST - ::1[39m
+2026-06-13 12:16:19:1619 [31merror[39m: [31m500 - Order validation failed: items.0.variant: Cast to Object failed for value "null" (type null) at path "variant" - /api/v1/user/orders - POST - ::1[39m
+2026-06-13 12:21:03:213 [31merror[39m: [31m400 - Walton Refrigerator 350L is no longer available - /api/v1/user/orders - POST - ::1[39m
+2026-06-13 13:14:48:1448 [31merror[39m: [31m400 - Walton Refrigerator 350L is no longer available - /api/v1/user/orders - POST - ::1[39m
+2026-06-13 13:21:16:2116 [31merror[39m: [31m500 - Order validation failed: items.0.variant: Cast to Object failed for value "null" (type null) at path "variant" - /api/v1/user/orders - POST - ::1[39m
+2026-06-13 14:17:32:1732 [31merror[39m: [31m500 - Order validation failed: items.0.variant: Cast to Object failed for value "null" (type null) at path "variant" - /api/v1/user/orders - POST - ::1[39m
+2026-06-13 14:18:47:1847 [31merror[39m: [31m500 - Order validation failed: items.0.variant: Cast to Object failed for value "null" (type null) at path "variant" - /api/v1/user/orders - POST - ::1[39m
+2026-06-13 14:21:30:2130 [31merror[39m: [31m500 - Order validation failed: items.0.variant: Cast to Object failed for value "null" (type null) at path "variant" - /api/v1/user/orders - POST - ::1[39m
+2026-06-13 14:24:50:2450 [31merror[39m: [31m500 - Order validation failed: items.0.variant: Cast to Object failed for value "null" (type null) at path "variant" - /api/v1/user/orders - POST - ::1[39m
+2026-06-13 14:24:57:2457 [31merror[39m: [31m500 - Order validation failed: items.0.variant: Cast to Object failed for value "null" (type null) at path "variant" - /api/v1/user/orders - POST - ::1[39m
+2026-06-13 14:26:54:2654 [31merror[39m: [31m500 - Order validation failed: items.0.variant: Cast to Object failed for value "null" (type null) at path "variant" - /api/v1/user/orders - POST - ::1[39m
+2026-06-13 14:27:00:270 [31merror[39m: [31m500 - Order validation failed: items.0.variant: Cast to Object failed for value "null" (type null) at path "variant" - /api/v1/user/orders - POST - ::1[39m
+2026-06-13 14:28:28:2828 [31merror[39m: [31m500 - next is not a function - /api/v1/user/orders - POST - ::1[39m
+2026-06-13 14:28:40:2840 [31merror[39m: [31m500 - next is not a function - /api/v1/user/orders - POST - ::1[39m
+2026-06-13 14:28:42:2842 [31merror[39m: [31m500 - next is not a function - /api/v1/user/orders - POST - ::1[39m
+2026-06-13 15:46:03:463 [31merror[39m: [31m500 - Order validation failed: items.0.variant: Cast to Object failed for value "null" (type null) at path "variant" - /api/v1/user/orders - POST - ::1[39m
+2026-06-13 15:53:41:5341 [31merror[39m: [31m500 - next is not a function - /api/v1/user/orders - POST - ::1[39m
