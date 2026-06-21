@@ -9,5 +9,6 @@ router.use('/user',require('./user/index.route'));
 
 router.use('/products',require('./web/product.route'));
 
-module.exports= router;
+router.use('/store',    require('./web/storefront.route'));
 
+module.exports= router;

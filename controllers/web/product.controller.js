@@ -34,7 +34,6 @@ class ProductController {
     show = catchAsync(async (req, res) => {
         const product = await this.productService.getBySlug(req.params.slug);
 
-        // Track view & recently viewed async (non-blocking)
         this.productService.trackView(product._id).catch(() => {});
         if (req.user) {
             this.userService.addToRecentlyViewed(req.user._id, product._id).catch(() => {});
